@@ -4,6 +4,7 @@ const cors = require("cors");
 const path = require("path");
 const dbConnection = require("./src/config/dbConnection");
 const userRouter = require("./src/routes/userRoute");
+const authRouter = require("./src/routes/authRoute");
 
 require("dotenv").config();
 
@@ -35,6 +36,7 @@ app.use(cors({
 
 //routes
 app.use("/users", userRouter)
+app.use("/auth", authRouter)
 
 
 //server
