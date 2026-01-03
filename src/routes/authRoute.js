@@ -7,6 +7,6 @@ const router = express.Router();
 
 
 router.post("/login", validate(loginSchema), login);
-router.delete("/logout/:userId", logout);
+router.delete("/logout", logout);
 
 module.exports = router;

@@ -1,13 +1,10 @@
-const productSchema = new mongoose.Schema(
+const mongoose = require("mongoose");
+
+const productSchema = mongoose.Schema(
     {
         name: {
             type: String,
             required: true,
-        },
-
-        slug: {
-            type: String,
-            unique: true,
         },
 
         description: {
@@ -40,26 +37,10 @@ const productSchema = new mongoose.Schema(
             required: true,
             min: 0,
         },
-
-        rating: {
-            type: Number,
-            default: 0,
-        },
-
-        numReviews: {
-            type: Number,
-            default: 0,
-        },
-
-        isFeatured: {
-            type: Boolean,
-            default: false,
-        },
-
-        tags: [String],
     },
     { timestamps: true }
 );
 
 const productModel = mongoose.model("Product", productSchema);
+
 module.exports = productModel;  

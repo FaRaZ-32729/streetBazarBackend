@@ -5,6 +5,7 @@ const path = require("path");
 const dbConnection = require("./src/config/dbConnection");
 const userRouter = require("./src/routes/userRoute");
 const authRouter = require("./src/routes/authRoute");
+const productRouter = require("./src/routes/productRoute");
 
 require("dotenv").config();
 
@@ -37,6 +38,7 @@ app.use(cors({
 //routes
 app.use("/users", userRouter)
 app.use("/auth", authRouter)
+app.use("/product", productRouter)
 
 
 //server

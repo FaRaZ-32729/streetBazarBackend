@@ -57,14 +57,6 @@ const login = async (req, res) => {
 
 const logout = async (req, res) => {
     try {
-        const id = req.params.userId;
-
-        const user = await userModel.findById(id);
-        if (!user) return res.status(404).json({
-            success: false,
-            message: "User Not Found"
-        });
-
         res.clearCookie("token");
 
         return res.status(200).json({
@@ -72,11 +64,11 @@ const logout = async (req, res) => {
             message: "Logout successful",
         });
     } catch (error) {
+        console.log("error while logging out");
         return res.status(500).json({
             success: false,
             message: "Server Error",
         });
-        console.log("error while logging out");
     }
 };
 
