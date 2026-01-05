@@ -11,12 +11,7 @@ const categorySchema = new mongoose.Schema(
             type: String,
             enum: ["Winter", "Summer", "All"],
             default: "Winter",
-        },
-
-        slug: {
-            type: String,
-            unique: true,
-        },
+        }
     },
     { timestamps: true }
 );

@@ -6,6 +6,9 @@ const dbConnection = require("./src/config/dbConnection");
 const userRouter = require("./src/routes/userRoute");
 const authRouter = require("./src/routes/authRoute");
 const productRouter = require("./src/routes/productRoute");
+const categoryRouter = require("./src/routes/categoryRoute");
+const reviewRouter = require("./src/routes/reviewRoute");
+const orderRouter = require("./src/routes/orderRoute");
 
 require("dotenv").config();
 
@@ -36,9 +39,12 @@ app.use(cors({
 }));
 
 //routes
-app.use("/users", userRouter)
+app.use("/user", userRouter)
 app.use("/auth", authRouter)
 app.use("/product", productRouter)
+app.use("/category", categoryRouter)
+app.use("/review", reviewRouter)
+app.use("/order", orderRouter)
 
 
 //server
