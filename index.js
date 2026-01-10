@@ -10,6 +10,8 @@ const categoryRouter = require("./src/routes/categoryRoute");
 const reviewRouter = require("./src/routes/reviewRoute");
 const orderRouter = require("./src/routes/orderRoute");
 const wishlistRouter = require("./src/routes/wishlistRoute");
+const cartRouter = require("./src/routes/cartRoute");
+const paymentRouter = require("./src/routes/paymentRoute");
 
 require("dotenv").config();
 
@@ -47,6 +49,8 @@ app.use("/category", categoryRouter);
 app.use("/review", reviewRouter);
 app.use("/order", orderRouter);
 app.use("/wishlist", wishlistRouter);
+app.use('/cart', cartRouter);
+app.use('/payment', paymentRouter);
 
 //server
 app.listen(Port, () => {
